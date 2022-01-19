@@ -1,0 +1,17 @@
+{
+  "name": "super-chat",
+  "version": "1.0.0",
+  "description": "chat con firebase y react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chat",
+    "firebase",
+    "typescript",
+    "react"
+  ],
+  "author": "makiavellipac",
+  "license": "ISC"
+}
