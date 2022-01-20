@@ -1,4 +1,3 @@
-import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
@@ -95,6 +94,7 @@ const config = {
   ],
   // configuracion del puerto
   devServer: {
+    static: './',
     historyApiFallback: true,
     port: 3000,
     open: true,
