@@ -7,7 +7,8 @@
     "start": "webpack serve --config webpack.config.dev.ts",
     "build": "webpack --config webpack.config.prod.ts",
     "format": "eslint . --ext .ts,.js,.tsx,.jsx",
-    "format:fix": "eslint . --ext .ts,.js,.tsx,.jsx --fix && prettier --write **/*.{ts,tsx,js,jsx,json}"
+    "format:fix": "eslint . --ext .ts,.js,.tsx,.jsx --fix && prettier --write **/*.{ts,tsx,js,jsx,json}",
+    "prepare": "husky install"
   },
   "keywords": [
     "chat",
@@ -49,7 +50,8 @@
     "typescript": "^4.5.4",
     "webpack": "^5.66.0",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.7.3"
+    "webpack-dev-server": "^4.7.3",
+    "husky": "^7.0.0"
   },
   "dependencies": {
     "clean-webpack-plugin": "^4.0.0",
@@ -58,6 +60,7 @@
     "eslint-webpack-plugin": "^3.1.1",
     "fork-ts-checker-webpack-plugin": "^6.5.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
     "mini-css-extract-plugin": "^2.5.2",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "postcss-cssnext": "^3.1.1",
@@ -65,5 +68,14 @@
     "react-dom": "^17.0.2",
     "simple-git-hooks": "^2.7.0",
     "terser-webpack-plugin": "^5.3.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged --allow-empty"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write **/*.{ts,tsx,js,jsx,json}",
+      "eslint . --ext .ts,.js,.tsx,.jsx"
+    ]
   }
 }
